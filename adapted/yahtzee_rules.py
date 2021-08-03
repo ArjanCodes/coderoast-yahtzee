@@ -83,7 +83,7 @@ class SmallStraight(Straight):
         return "Small straight"
 
     def points(self, hand: Hand):
-        l = sorted(hand.get_hand())
+        l = sorted(set(hand.get_hand()))
         if len(l) == 4 and self.is_straight(l):
             return 30
         elif len(l) == 5 and (self.is_straight(l[1:]) or self.is_straight(l[:-1])):
